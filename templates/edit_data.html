@@ -1,1 +1,20 @@
 {% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div>
+      <label for="id">ID:</label>
+      <input type="text" id="id" name="id" value="{{ a }}">
+    </div>
+    <div>
+      <label for="date">Date:</label>
+      <input type="text" id="date" name="date" value="{{ b }}">
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" value="{{ c }}">
+    </div>
+    <button type="submit" class='btn btn-primary-outline'>Save</button>
+  </form>
+{% endblock content  %}

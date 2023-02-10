@@ -1,1 +1,21 @@
 {% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete the following data?</p>
+    <div>
+      <label>ID:</label>
+      {{ a }}
+    </div>
+    <div>
+      <label>Date:</label>
+      {{ b }}
+    </div>
+    <div>
+      <label>Description:</label>
+      {{ c }}
+    </div>
+    <button type="submit" class='btn btn-outline-danger'>Delete</button>
+  </form>
+{% endblock content %}
