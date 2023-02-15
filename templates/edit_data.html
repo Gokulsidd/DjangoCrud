@@ -1,20 +1,30 @@
 {% extends 'base.html' %}
-
-{% block content %}
-<form method="post">
-    {% csrf_token %}
-    <div>
-      <label for="id">ID:</label>
-      <input type="text" id="id" name="id" value="{{ a }}">
+{%block content%}
+<html>
+<head>
+    <title>update</title>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tbody>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <tr>
+                        <td> ID</td>
+                        <td><input type="text" name="id" required></td>
+                    </tr>
+                    <tr>
+                        <td> resourceType</td>
+                        <td><input type="text" name="resourceType" required></td>
+                    </tr>
+                    <tr>
+                        <td><button class='btn btn-primary'>Submit</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
     </div>
-    <div>
-      <label for="date">Date:</label>
-      <input type="text" id="date" name="date" value="{{ b }}">
-    </div>
-    <div>
-      <label for="description">Description:</label>
-      <input type="text" id="description" name="description" value="{{ c }}">
-    </div>
-    <button type="submit" class='btn btn-primary-outline'>Save</button>
-  </form>
-{% endblock content  %}
+</body>
+</html>
+{% endblock content %}

@@ -1,8 +1,29 @@
 {% extends 'base.html' %}
+{%block content%}
+<html>
 
+<head>
+    <title>Create </title>
+</head>
 
-{% block content %}
-<form action="">
+<body>
+    <div class="container">
+        <table>
+            <tbody>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <tr>
+                        <td> Display</td>
+                        <td><input type="text" name="display" required></td>
+                    </tr>
+                    <tr>
+                        <td><button class='btn btn-success'>Submit</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
 
-</form>
+</html>
 {% endblock content %}

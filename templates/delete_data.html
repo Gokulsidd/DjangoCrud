@@ -1,21 +1,28 @@
 {% extends 'base.html' %}
+{%block content%}
+<html>
+<head>
+    <title>update</title>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tbody>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <h2>Are you Sure ?</h2>
+                    <tr>
+                        <td> ID</td>
+                        <td><input type="text" name="id" required></td>
+                    </tr>
+                    <tr>
+                        <td><button class='btn btn-danger'>Confirm</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
 
-{% block content %}
-<form method="post">
-    {% csrf_token %}
-    <p>Are you sure you want to delete the following data?</p>
-    <div>
-      <label>ID:</label>
-      {{ a }}
-    </div>
-    <div>
-      <label>Date:</label>
-      {{ b }}
-    </div>
-    <div>
-      <label>Description:</label>
-      {{ c }}
-    </div>
-    <button type="submit" class='btn btn-outline-danger'>Delete</button>
-  </form>
+</html>
 {% endblock content %}
